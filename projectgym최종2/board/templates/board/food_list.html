@@ -1,0 +1,37 @@
+{%extends "board/layout.html"%}
+{% load staticfiles %}
+{%block content%}
+			<!-- Inner Content -->
+			<div class="inner-page padd">
+				
+				<!-- Shopping Start -->
+				
+				<div class="shopping">
+					<div class="container">
+						<!-- Shopping items content -->
+						<div class="shopping-content">
+							<div class="row">
+								<div class="col-md-3 col-sm-6">
+									<!-- Shopping items -->
+									<div class="shopping-item">
+										<!-- Image -->
+										<a href="item-single.html"><img class="img-responsive" src="{%static "img/shopping/shop1.jpg"%}" alt="" /></a>
+										<!-- Shopping item name / Heading -->
+										<h4 class="pull-left"><a href="item-single.html">Quasi Architects</a></h4>
+										<div class="clearfix"></div>
+										<!-- Paragraph -->
+										<p>Lorem ipsum dolor sit amet, conse ctetur adipis cicing elit.</p>
+										<!-- Shopping item hover block & link -->
+										<div class="item-hover br-red hidden-xs"></div>
+										<a class="link hidden-xs" href="#">보기</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Shopping End -->
+				
+			</div><!-- / Inner Page Content End -->	
+{%endblock%}
