@@ -1,0 +1,14 @@
+{% extends "board/layout.html" %}
+
+{% block content %}
+<center>
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    </br></br></br></br>
+    <input type="submit" value="댓글 달기" />
+</form>
+</center>
+{% endblock %}

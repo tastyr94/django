@@ -1,0 +1,40 @@
+{% extends "board/layout.html" %}
+
+{% block content %}
+
+    <hr/>
+        <table class="table table-bordered table-hover">
+                <center>
+                    <div id="toolbar">
+                    <form id="changelist-search" method="get">
+                        <div><!-- DIV needed for valid HTML -->
+                            <label for="searchbar"><img src="/static/admin/img/search.svg" alt="Search" /></label>
+                            <select name='category'>
+                                <option value="1" >스트레칭  </option>
+                                <option value="2" >유산소운동  </option>
+                                <option value="3" >근력운동  </option>
+                            </select> 
+                                <input type="submit" value="부위별 검색" />
+                                </br></br></br></br>
+                        </div>
+                    </form>
+                </div>
+                </center>
+                </hr>
+                <tbody>
+                {% for board in board_list%}
+                    <tr class='table_feature'>
+                        <td><center>{{board.pk}}</center></td>
+                        <td><a href="{% url "board:board_detail" board.pk %}">
+                                {{ board.title }}
+                            </a> 
+                        </td>
+                        <td><center>{{board.get_category_display}}</center></td>
+                        <td>{{board.created_at}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+    </table>
+    <hr/>
+</html>
+{% endblock %}

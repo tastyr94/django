@@ -1,0 +1,60 @@
+{%extends "accounts/layout.html"%}
+{% load staticfiles %}
+{%block content%}
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML | Table</title>
+    <style>
+      table {
+        width: 100%;
+      }
+      table, th, td {
+        border: 1px solid #bcbcbc;
+      }
+    </style>
+  </head>
+  <body>
+    
+        <center><h1>{{ user }}님 환영합니다.</h1></center>
+
+    <table>
+      <caption>{{user}}님의 정보
+      <thread>
+        <tr>
+          <th>이름</th>
+          <th>{{user_name}}</th>
+        <tr>
+        <tr>
+          <th>전화번호</th>
+          <th>{{user_phonenumb}}</th>
+        <tr>
+        <tr>
+          <th>이메일</th>
+          <th>{{user_email}}</th>
+        <tr>
+        <tr>  
+    <table>
+    
+    <br>
+    <br>
+    <br>
+          
+    <table>
+      <caption>최근에 보신 항목들</caption>
+      <thead>
+        <tr>
+          <th>순서</th>
+          <th>운동명</th>
+          <th>부위</th>
+          <th>조회 시간</th>
+        </tr>
+      </thead>
+     
+    </table>
+  </body>
+  
+  
+</html>
+{% endblock %}

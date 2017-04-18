@@ -1,0 +1,47 @@
+{% extends "board/layout.html" %}
+
+{% block content %}
+
+<center>
+    
+
+<center class="board_detail_line">
+        <h1 class="board_detail_line", style="font-family: KBIZ한마음고딕 B"><{{ board.title }}><br><br><br></h1>
+    <span style="font-family: KBIZ한마음고딕 B">
+    </span>
+    {% if board.photo %}
+        <img src="{{ board.photo.url }}" style="max-width: 100%;" />
+    {% endif %}
+    <h3 style="font-family: KBIZ한마음고딕 B">운동 방법</h3>
+    {{ board.instruction |linebreaks }}
+    <br>
+    <h3 style="font-family: KBIZ한마음고딕 B">운동 효과</h3>
+    {{ board.outcomes |linebreaks }}
+
+    <br>
+    <a style="font-family: KBIZ한마음고딕 B", href="http://{{board.links}}">>>운동 동영상 보기<<</a>
+    <br>
+    <br>
+    {{ board.created_at |linebreaks }}
+
+    <hr/>
+
+    <ul>
+    {% for comment in board.comment_set.all %}
+    <li>
+        {{ comment.message }}
+        <small>by {{ comment.user }}</small>
+        <small>at {{ comment.updated_at }}</small>
+        <a href="/board/{{ board.pk }}/comments/{{ comment.pk }}/edit/">수정</a>
+        <a href="{% url "board:comment_delete" board.pk comment.pk %}">삭제</a>
+    </li>
+    {% endfor %}
+    </ul>
+
+
+    <a href="/board/list/" class="btn btn-primary">목록</a>
+    <!--<a href="/board/{{ board.pk }}/edit/" class="btn btn-primary">수정</a>-->
+    <a href="{% url "board:comment_new" board.pk %}" class="btn btn-default">댓글쓰기</a>
+    </br></br></br></br>
+</center>
+{% endblock %}
