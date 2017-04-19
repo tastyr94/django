@@ -1,0 +1,29 @@
+{% extends "board/layout.html" %}
+{% load staticfiles %}
+{% block content %}
+<!-- Inner Content -->
+			<div class="inner-page padd">
+			
+				<!-- Error Start -->
+				
+				<div class="error">
+					<div class="container">
+						<!-- Error page content -->
+						<div class="error-content">
+							<!-- Heading -->
+							<h3>잠깐<span class="red">!!!</span></h3>
+							<!-- Message paragraph -->
+							<p class="text-muted" >정말 삭제하시겠습니까?</p>
+							<form action="" method="post">
+                                {% csrf_token %}
+                                <input type="submit" value="예. 삭제하겠습니다." />    
+                            </form>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Error End -->
+				
+			</div><!-- / Inner Page Content End -->	
+
+{% endblock %}

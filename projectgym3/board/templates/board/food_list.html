@@ -1,0 +1,41 @@
+{%extends "board/layout.html"%}
+{% load staticfiles %}
+{%block content%}
+			<!-- Inner Content -->
+			<div class="inner-page padd">
+				
+				<!-- Shopping Start -->
+				
+				<div class="shopping">
+					<div class="container">
+						<!-- Shopping items content -->
+						<div class="shopping-content">
+							<div class="row">
+								{% for food in food_list%}
+								<div class="col-md-3 col-sm-6">
+									<!-- Shopping items -->
+									<div class="shopping-item">
+										<!-- Image -->
+										<a href="{% url "board:food_detail" food.pk %}"><img class="img-responsive" src="{{ food.photo }}" alt="" /></a>
+										<!-- Shopping item name / Heading -->
+										<h4 class="pull-left"><a href="{% url "board:food_detail" food.pk %}">{{ food.title }}</a></h4>
+										<div class="clearfix"></div>
+										<!-- Paragraph -->
+										<p>{{ food.instruction }}</p>
+										<!-- Shopping item hover block & link -->
+										<div class="item-hover br-red hidden-xs"></div>
+										<a class="link hidden-xs" href="#">보기</a>
+									</div>
+								</div>
+								{%endfor%}
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Shopping End -->
+
+				
+				
+			</div><!-- / Inner Page Content End -->	
+{%endblock%}
