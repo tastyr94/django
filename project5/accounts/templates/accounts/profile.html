@@ -1,0 +1,84 @@
+{%extends "accounts/layout.html"%}
+{% load staticfiles %}
+{%block content%}
+
+      <!-- Inner Content -->
+			<div class="inner-page padd">
+        <center>
+          <img class="img-responsive" src='{%static "img/crown.png"%}' alt="" />
+            <h1>{{ user }}님 환영합니다.</h1>
+        </center>
+			
+				<!-- Contact Us Start -->
+				
+				<div class="contactus">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3" >
+								<!-- Contact Us content -->
+								<div class="row">
+									<div class="col-md-6 col-sm-6">
+										<!-- Contact content details -->
+										<div class="contact-details">
+											<!-- Heading -->
+											<center><h4>성별</h4>
+                      <div class="chefs-member">
+									    <!-- Chefs member header -->
+									      <div class="chefs-head">
+											
+												<!-- Image -->
+													<img class="chefs-img img-responsive" src="{%static "img/cheff/01.gif"%}" alt="" />	
+												
+									    	<!-- chef member image -->
+										      
+								      	</div>
+							      	</div>
+                      </center>
+										</div>
+									</div>
+									<div class="col-md-6 col-sm-6">
+										<!-- Contact content details -->
+										<div class="contact-details">
+											<!-- Heading -->
+											<center><h4>회원 정보</h4></center>
+                      <!-- Address / Icon -->
+											<i class="fa fa-map-marker br-red"></i> <span>{{user}}</span>
+											<div class="clearfix"></div>
+											<!-- Contact Number / Icon -->
+											<i class="fa fa-phone br-green"></i> <span>010-2222-2222</span>
+											<div class="clearfix"></div>
+											<!-- Email / Icon -->
+											<i class="fa fa-envelope-o br-lblue"></i> <span>mwg3231@naver.com</span>
+											<div class="clearfix"></div>
+										</div>
+									</div>
+								</div><!--/ Inner row end -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Contact Us End -->
+<!--
+        <table>
+      <caption>{{user}}님의 정보
+      <thread>
+        <tr>
+          <th>이름</th>
+          <th>{{user.name}}</th>
+        <tr>
+        <tr>
+          <th>전화번호</th>
+          <th>{{user.phone_number}}</th>
+        <tr>
+        <tr>
+          <th>이메일</th>
+          <th>{{user_email}}</th>
+        <tr>
+        <tr>  
+    <table>
+    
+    <br>
+    <br>
+    <br>
+-->
+{% endblock %}

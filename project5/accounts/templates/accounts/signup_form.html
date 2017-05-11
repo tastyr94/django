@@ -1,0 +1,39 @@
+{%extends "accounts/layout.html"%}
+{% load staticfiles %}
+{%block content%}
+<!-- Inner Content -->
+			<div class="inner-page padd">
+			
+				<!-- Error Start -->
+				
+				<div class="error">
+					<div class="container">
+						<!-- Error page content -->
+						<div class="error-content">
+              <!-- Heading -->
+							<h1><span class="lblue">회원가입</span></h1>
+                <form action="" method="post">
+                {% csrf_token %}
+                <fieldset>
+                  <div>
+                    <h4>닉네임</h4>{{form.username}}</br></br>
+                  </div>
+                  <div>
+                    <h4>비밀번호</h4>{{form.password1}}</br></br>
+                  </div>
+                  <div>
+                    <h4>비밀번호(확인)</h4>{{form.password2}}</br></br>
+                  </div>
+                
+                  </br></br>
+                  </fieldset>
+                  <div> 
+                  <input type="submit" value="회원가입" />
+                  </div>
+                </form>
+ 	          </div>
+					</div>
+				</div><!-- Error End -->
+			</div><!-- / Inner Page Content End -->	
+ 			
+ {% endblock %}

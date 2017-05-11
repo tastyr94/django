@@ -1,0 +1,83 @@
+{%extends "board/layout.html"%}
+{% load staticfiles %}
+{%block content%}
+		<!-- Inner Content -->
+			<div class="inner-page padd">
+            <!-- About company -->
+				<div class="about-company padd">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6">
+								<!-- About Compnay Item -->
+								<div class="about-company-item">
+									<!-- About Company Image -->
+									<img class="img-responsive img-thumbnail" src="{%static "img/exercise.jpg"%}" alt="" />
+								</div>
+							</div>
+							<div class="col-md-6">
+								<!-- About Compnay Item -->
+								<div class="about-company-item">
+									<!-- Heading -->
+									<h3>프로젝트를 만든 <span class="lblue">이유</span></h3>
+									<!-- Paragraph -->
+									<p>노인분들을 위한 운동을 소개하고, </br>운동 후에 섭취하면 좋은 저지방, 고단백 음식의</br> 조리 방법 및 영양소를 소개하여</br> 노인 분들의 건강 증신에 도움을 드립니다.</p>
+									<br /><!--/ Line break -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>    
+
+				<!-- Chefs Start -->
+				
+				<div class="chefs padd">
+					<div class="container">
+						<!-- Default Heading -->
+						<div class="default-heading">
+							<!-- Crown image -->
+							<img class="img-responsive" src="{%static "img/crown.png"%}" alt="" />
+							<!-- Heading -->
+							<h2>만든 사람들</h2>
+							<!-- Paragraph -->
+							<p>노인을 위한 프로그램을 만든이를 소개합니다.</p>
+						</div>
+						<div class="row">
+							<div class="col-md-6 col-sm-4">
+								<!-- Chef Member -->
+								<div class="chefs-member">
+									<!-- Chefs member header -->
+									<div class="chefs-head">
+										<!-- Member background image -->
+										<img class="chefs-back img-responsive" src="{%static "img/fruit2.png"%}" alt="" />
+										<!-- chef member image -->
+										<img class="chefs-img img-responsive" src="{%static "img/chef/01.gif"%}" alt="" />
+									</div>
+									<!--Name / Heading -->
+									<h3>Moon. won guen</h3>
+									<!-- Member designation -->
+									<span>웹 구현</span>
+								</div>
+							</div>
+							
+							<div class="col-md-6 col-sm-4">
+								<!-- Chef Member -->
+								<div class="chefs-member">
+									<!-- Chefs member header -->
+									<div class="chefs-head">
+										<!-- Member background image -->
+										<img class="chefs-back img-responsive" src="{%static "img/fruit3.png"%}" alt="" />
+										<!-- chef member image -->
+										<img class="chefs-img img-responsive" src="{%static "img/chef/02.gif"%}" alt="" />
+									</div>
+									<!--Name / Heading -->
+									<h3>Gim. sun me</h3>
+									<!-- Member designation -->
+									<span>웹과 앱 연동</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!-- Chefs End -->
+			</div><!-- / Inner Page Content End -->	
+            {%endblock%}
+		
