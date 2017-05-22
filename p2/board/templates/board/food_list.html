@@ -1,0 +1,48 @@
+{%extends "accounts/layout.html"%}
+{% load staticfiles %}
+{%block content%}
+
+			<!-- Inner Content -->
+			<div class="inner-page padd">
+				
+				<!-- Dishes Start -->
+					
+				<div class="dishes padd">
+					<div class="container">					
+						<div class="row">
+							{% for food in food_list%}
+							<div class="col-md-3 col-sm-6">	
+								<div class="dishes-item-container">
+									<!-- Image Frame -->
+									<div class="img-frame">
+										{% if food.photo %}
+										<!-- Image -->
+										<a href="{% url "board:food_detail" food.pk %}"><img class="img-responsive" src="{{ food.photo.url }}" alt="" /></a>
+										{%endif%}
+										<!-- Block for on hover effect to image -->
+										<div class="img-frame-hover">
+											<!-- Hover Icon -->
+											<a href="{% url "board:food_detail" food.pk %}"><i class="fa fa-cutlery"></i></a>
+										</div>
+									</div>
+									<!-- Dish Details -->
+									<div class="dish-details">
+										<!-- Heading -->
+										<h3>{{ food.title }}</h3>
+										<!-- Paragraph -->
+										<p>{{ food.instruction }}</p>
+									</div>
+								</div>
+							</div>
+							{%endfor%}
+						</div>
+					</div>					
+				</div>
+				
+				<!-- Dishes End -->
+			
+				
+				
+			</div><!-- / Inner Page Content End -->	
+				
+{%endblock%}

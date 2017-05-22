@@ -1,0 +1,111 @@
+{%extends "accounts/layout.html"%}
+{% load staticfiles %}
+{%block content%}
+		
+			<!-- Inner Content -->
+			<div class="inner-page padd">
+			
+				<!-- Recipe Start -->
+				
+				<div class="recipe">
+					<div class="container">
+						<!-- Recipe contents -->
+						<div class="recipe-content">
+							<!-- Recipe Name / Heading -->
+							<h4>{{ food.title }}</h4>
+							<div class="row">
+								<div class="col-md-4 col-sm-6">
+									<!-- Paragraph -->
+									<p>{{ food.instruction }}</p>
+									<!-- Recipe Items -->
+									<div class="recipe-item">
+										{% if food.photo %}
+										<!-- Food image -->
+										<img class="img-responsive" src="{{ food.photo.url }}" alt="" />
+										{%endif%}
+									</div>
+								</div>
+								<div class="col-md-3 col-sm-6">
+									<!-- Recipe Items -->
+									<div class="recipe-item">
+										<!-- Heading -->
+										<h4>재료</h4>
+										<!-- Recipe ingredients -->
+										<ul class="list-unstyled">
+											<li>
+												<i class="fa fa-check"></i> 닭 고기 <span class="pull-right"> 500g</span>
+												<div class="clearfix"></div>
+											</li>
+											<li>
+												<i class="fa fa-check"></i> 향신료 <span class="pull-right"> 50g</span>
+												<div class="clearfix"></div>
+											</li>
+											<li>
+												<i class="fa fa-check"></i> 우유 <span class="pull-right"> 1/2 컵</span>
+												<div class="clearfix"></div>
+											</li>
+											<li>
+												<i class="fa fa-check"></i> 달걀 <span class="pull-right"> 100ml</span>
+												<div class="clearfix"></div>
+											</li>
+											<li>
+												<i class="fa fa-check"></i> 밀가루 <span class="pull-right"> 250g</span>
+												<div class="clearfix"></div>
+											</li>
+											<li><i class="fa fa-check"></i> 샐러드 야채 <span class="pull-right"> 150g</span>
+												<div class="clearfix"></div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="col-md-5 col-sm-12">
+									<!-- Recipe Items -->
+									<div class="recipe-item">
+										<!-- Heading -->
+										<h4>조리방법</h4>
+										<!-- Recipe Description -->
+										<div class="recipe-description">
+											<!-- Paragraph -->
+											<h4>{{ food.direction }}</h4><br>
+											<!-- Heading -->
+											<h4>-영양표-</h4>
+											<!-- Recipe nutrition table -->
+											<div class="table-responsive">
+												<table class="table table-condensed table-bordered">
+													<tr>
+														<th>양</th>
+														<th>단위</th>
+													</tr>
+													<tbody>
+														<tr>
+															<td>칼로리</td>
+															<td>200</td>
+														</tr>
+														<tr>
+															<td>지방</td>
+															<td>9g</td>
+														</tr>
+														<tr>
+															<td>탄수화물</td>
+															<td>33g</td>
+														</tr>
+														<tr>
+															<td>단백질</td>
+															<td>25g</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div><!-- / Inner Page Content End -->	
+			
+			
+{%endblock%}
+		

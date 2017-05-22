@@ -1,0 +1,10 @@
+{%extends "accounts/layout.html"%}
+{% load staticfiles %}
+{%block content%}
+<span id="time_out">0.00</span>
+<br />
+<br />
+<button id="start_timer" onclick="start()">Start</button>
+<button id="stop_timer" onclick="stop()">Stop</button>
+<button id="reset_timer" onclick="reset()">Reset</button>
+{% endblock %}

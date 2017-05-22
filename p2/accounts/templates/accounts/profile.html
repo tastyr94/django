@@ -1,0 +1,82 @@
+{%extends "accounts/layout.html"%}
+{% load staticfiles %}
+{%block content%}
+
+      <!-- Inner Content -->
+			<br><br>
+			<div class="inner-page padd">
+        <center>
+            <h1>{{ user }}님 환영합니다.</h1>
+						<br>
+        </center>
+			
+				<!-- Contact Us Start -->
+				
+				<div class="contactus">
+					<div class="container">
+						<div class="row">
+									<div class="col-md-3 col-md-offset-3">
+										<!-- Contact content details -->
+										<div class="contact-details">
+											<!-- Heading -->
+											<center><h4>회원 정보</h4></center>
+											<center>
+												<!-- Image -->
+													<img class="chefs-img img-responsive" src="{%static "img/cheff/01.gif"%}" alt="" />	
+												</center>
+                      <!-- Address / Icon -->
+											<i class="fa fa-map-marker br-red"></i> <span>{{user}}</span>
+											<div class="clearfix"></div>
+											<!-- Contact Number / Icon -->
+											<i class="fa fa-phone br-green"></i> <span>010-2222-2222</span>
+											<div class="clearfix"></div>
+											<!-- Email / Icon -->
+											<i class="fa fa-envelope-o br-lblue"></i> <span>mwg3231@naver.com</span>
+											<div class="clearfix"></div>
+										</div>
+									</div>
+						
+						<div class="col-md-3">
+										<!-- Contact content details -->
+										<div class="contact-details">
+											<!-- Heading -->
+											<center><h4>같이하기</h4></center>
+                      <div class="chefs-member">
+									    <!-- Chefs member header -->
+									      <h3>같이하기 버튼을 눌러 주변 사람들에게 메세지를 전송합니다.</h3> 
+												<br><br>
+										    <center><a data-toggle="modal" href="#" class="btn btn-warning btn-lg">같이하기</a></center>
+												<br><br>
+							      	</div>
+										</div>
+									</div>
+					</div>
+				</div>
+
+				</div><!-- Inner Content End-->
+				<!-- Contact Us End -->
+<!--
+        <table>
+      <caption>{{user}}님의 정보
+      <thread>
+        <tr>
+          <th>이름</th>
+          <th>{{user.name}}</th>
+        <tr>
+        <tr>
+          <th>전화번호</th>
+          <th>{{user.phone_number}}</th>
+        <tr>
+        <tr>
+          <th>이메일</th>
+          <th>{{user_email}}</th>
+        <tr>
+        <tr>  
+    <table>
+    
+    <br>
+    <br>
+    <br>
+-->
+
+{% endblock %}

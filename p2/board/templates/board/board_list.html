@@ -1,0 +1,89 @@
+{%extends "accounts/layout.html"%}
+{% load staticfiles %}
+{% block content %}
+
+                <center>
+        								
+                    <br><br><div id="toolbar">
+                        <form id="changelist-search" method="get">
+                            <div><!-- DIV needed for valid HTML -->
+                                <label for="searchbar"><img src="/static/admin/img/search.svg" alt="Search" /></label>
+                                <select name='category'>
+									<option value=""  > 전체  </option>
+                                    <option value="1" >스트레칭  </option>
+                                    <option value="2" >유산소운동  </option>
+                                    <option value="3" >근력운동  </option>
+                                </select> 
+                                    <input type="submit" value="검색하기" />
+                            </div>
+                        </form>
+                    </div>
+                </center>
+				
+
+		<!-- Inner Content -->
+			<div class="inner-page padd">
+				
+				<!-- Shopping Start -->
+				
+				<div class="shopping">
+					<div class="container">
+						<!-- Shopping items content -->
+						<div class="shopping-content">
+							<div class="row">
+								{% for board in board_list%}
+								<div class="col-md-3 col-sm-6">
+									<!-- Shopping items -->
+									<div class="shopping-item">
+										{% if board.get_category_display == "스트레칭" %}
+										{% if board.photo %}
+										<!-- Image -->
+										<a href="{% url "board:board_detail" board.pk %}"><img class="img-responsive" src="{{ board.photo.url }}" alt="" /></a>
+										{%endif%}
+										<!-- Shopping item name / Heading -->
+										<h4 class="pull-left">{{ board.title }}</h4>
+										<div class="clearfix"></div>
+										<!-- Shopping item hover block & link -->
+										<div class="item-hover br-red hidden-xs"></div>
+										<a class="link hidden-xs" href="{% url "board:board_detail" board.pk %}">보기</a>
+										<!-- Hot tag -->
+										<span class="hot-tag br-red">S</span>
+										{% elif board.get_category_display == "유산소운동" %}
+										{% if board.photo %}
+										<!-- Image -->
+										<a href="{% url "board:board_detail" board.pk %}"><img class="img-responsive" src="{{ board.photo.url }}" alt="" /></a>
+										{%endif%}
+										<!-- Shopping item name / Heading -->
+										<h4 class="pull-left">{{ board.title }}</h4>
+										<div class="clearfix"></div>
+										<!-- Shopping item hover block & link -->
+										<div class="item-hover br-green hidden-xs"></div>
+										<a class="link hidden-xs" href="{% url "board:board_detail" board.pk %}">보기</a>
+										<!-- Hot tag -->
+										<span class="hot-tag br-green">R</span>
+										{% elif board.get_category_display == "근력운동" %}
+										{% if board.photo %}
+										<!-- Image -->
+										<a href="{% url "board:board_detail" board.pk %}"><img class="img-responsive" src="{{ board.photo.url }}" alt="" /></a>
+										{%endif%}
+										<!-- Shopping item name / Heading -->
+										<h4 class="pull-left">{{ board.title }}</h4>
+										<div class="clearfix"></div>
+										<!-- Shopping item hover block & link -->
+										<div class="item-hover br-lblue hidden-xs"></div>
+										<a class="link hidden-xs" href="{% url "board:board_detail" board.pk %}">보기</a>
+										<!-- Hot tag -->
+										<span class="hot-tag br-lblue">W</span>
+										{%endif%}
+									</div>
+								</div>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Shopping End -->
+				
+			</div><!-- / Inner Page Content End -->
+
+{%endblock%}
