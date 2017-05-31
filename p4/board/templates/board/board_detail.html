@@ -1,0 +1,81 @@
+{%extends "accounts/layout.html"%}
+{% load staticfiles %}
+{% block content %}
+
+<!-- Inner Content -->
+			<div class="inner-page padd">
+			
+				<!-- Booking Start -->
+				<div class="booking">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-7">
+								<!-- Heading -->
+								<center><h3>{{ board.title }}</h3></center>
+								
+								<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+									<!-- Wrapper for slides -->
+									<div class="carousel-inner">
+										<div class="item active">
+                                            {% if board.photo %}
+											<img src="{{ board.photo.url }}" style="max-width: 100%;" />
+                                            {%endif%}
+                                        </div>
+									</div>	
+								</div>
+							</div>
+							<div class="col-md-5">
+								<!-- Booking form area -->
+								<div class="booking-form">
+									<!-- Heading -->
+									<center><h3>운동 방법</h3></center>
+									<!-- Paragraph -->
+									{{ board.instruction |linebreaks }}
+                                    <br><br><br>
+                                    <center><h3>운동 효과</h3></center>
+									<!-- Paragraph -->
+									<center>{{ board.outcomes |linebreaks }}</center>
+                                    <br><br><br>
+                                    <div style="text-align:right">
+                                    <a data-toggle="modal" href="http://{{board.links}}" class="btn btn-warning btn-lg">운동 영상 보기</a>
+                                    </div>
+                                </div>
+							</div>
+						</div>
+					</div>
+				</div><!-- Booking End -->
+				
+				<!-- commnent start-->
+				<div class="booking">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3">
+								<!-- Heading -->
+								<center><h3>댓글</h3></center>
+								<div style="text-align:right">
+									<a href="{% url "board:comment_new" board.pk %}" class="btn btn-success">댓글쓰기</a>
+								</div>
+								<ul>
+									{% for comment in board.comment_set.all %}
+									<li>
+										<b>{{ comment.user }}</b><br>
+										{{ comment.message }}<br>
+										<b><i class="fa fa-calendar"></i>&nbsp; {{ comment.updated_at }}</b>
+										<!--<a href="/board/{{ board.pk }}/edit/" class="btn btn-primary">수정</a>-->
+										<div style="text-align:right">
+											<a class="btn btn-info" type="button" href="/board/board_list/{{ board.pk }}/comments/{{ comment.pk }}/edit/">수정</a>
+											<a class="btn btn-danger" type="button" href="{% url "board:comment_delete" board.pk comment.pk %}">삭제</a>
+										</div>
+									</li>
+									<hr width=90%>
+									{% endfor %}
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+				</div><!-- commnent End-->
+
+			</div><!-- / Inner Page Content End -->
+
+{% endblock %}

@@ -1,0 +1,225 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<!상속>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<!-- Title here -->
+		<title>G.M</title>
+		<!-- Description, Keywords and Author -->
+		<meta name="description" content="Your description">
+		<meta name="keywords" content="Your,Keywords">
+		<meta name="author" content="ResponsiveWebInc">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Styles -->
+		<!-- Bootstrap CSS -->
+		<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+		<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+		<link href="{%static 'css/settings.css'%}" rel="stylesheet">		
+		<!-- FlexSlider Css -->
+		<link rel="stylesheet" href="{%static 'css/flexslider.css'%}" media="screen" />
+		<!-- Portfolio CSS -->
+      	<link href="{% static 'css/prettyPhoto.css' %}" rel="stylesheet">
+      	<!-- Font awesome CSS -->
+      	<link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">   
+      	<!-- Custom Less -->
+      	<link href="{% static 'css/less-style.css' %}" rel="stylesheet">   
+      	<!-- Custom CSS -->
+      	<link href="{% static 'css/style.css' %}" rel="stylesheet">
+      	<!--[if IE]><link rel="stylesheet" href="css/ie-style.css"><![endif]-->
+		
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="#">
+	</head>
+	
+	<body>		
+	<!-- Page Wrapper -->
+		<div class="wrapper">
+		
+			<!-- Header Start -->
+
+			<div class="header">
+				<div class="container">
+					<!-- Header top area content -->
+					
+					<div class="row">
+						<div class="col-md-4 col-sm-5">
+							<!-- Logo area -->
+							<div class="logo">
+								<img class="img-responsive" src="{%static 'img/logo00.png' %}" alt="" />
+								<!-- Heading -->
+								<h1>O.M.R</h1>
+								<!-- Paragraph -->
+								<p>Old-Man-Refresh</p>
+							</div>
+						</div>
+						<div class="col-md-8 col-sm-7">
+							<!-- Navigation -->
+							<nav class="navbar navbar-default navbar-right" role="navigation">
+								<div class="container-fluid">
+									<!--  mobile display -->
+									<div class="navbar-header">
+										<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+											<span class="sr-only">Toggle navigation</span>
+											<span class="icon-bar"></span>
+											<span class="icon-bar"></span>
+											<span class="icon-bar"></span>
+										</button>
+									</div>
+
+									<!-- Collect the nav links, forms, and other content for toggling -->
+									<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+										<ul class="nav navbar-nav">
+											{% if not user.is_authenticated %}
+												<li><a href="{% url "login" %}?next={{ request.path }}"><img src='{%static "img/nav-menu/login.png" %}' class="img-responsive" alt="" />로그인</a></li>
+												<li><a href="{% url "signup" %}"><img src='{%static "img/nav-menu/join.png" %}' class="img-responsive" alt="" />회원가입</a></li>	
+											{% else %}
+												<li><a href="{% url "logout" %}?next={{ request.path }}"><img src='{%static "img/nav-menu/logout.png" %}' class="img-responsive" alt="" />로그아웃</a></li>
+												<li><a href="{% url "profile" %}"><img src='{%static "img/nav-menu/profile.png" %}' class="img-responsive" alt="" />내 정보</a></li>
+											{% endif %}
+											<li class="dropdown">
+												<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src='{%static "img/nav-menu/page.png" %}' class="img-responsive" alt="" /> 페이지 <b class="caret"></b></a>
+												<ul class="dropdown-menu">
+													<li><a href="{% url "board:board_main" %}">홈 페이지</a></li>
+													<li><a href="{% url "board:board_list" %}">운동 페이지</a></li>
+													<li><a href="{% url "board:food_list" %}">음식 페이지</a></li>
+													<li><a href="{% url "board:self"%}">자가 진단 페이지</a></li>
+													<li><a href="{% url "board:about"%}">소개 페이지</a></li>
+												</ul>
+											</li>
+										</ul>
+									</div><!-- /.navbar-collapse -->
+								</div><!-- /.container-fluid -->
+							</nav>
+						</div>
+					</div>
+				</div> <!-- / .container -->
+			</div>
+			<!-- Header End -->
+			
+
+            </div>
+			<!-- / Main Content End -->	
+            {%block content%}
+            {%endblock%}
+            <!-- Showcase Start -->
+				
+				<div class="showcase">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6 col-sm-6">
+								<!-- Showcase section item -->
+								<div class="showcase-item">
+									<!-- Image -->
+									<img class="img-responsive" src='{%static "img/cheff/c-back01.png"%}' alt="" />
+									<!-- Heading -->
+									<h3><a class="btn btn-danger btn-lg" href="{% url "board:board_list" %}">운동보기</a></h3>
+									<p>스트레칭, 유산소운동, 근력운동을 소개하여 노인분들의 윤택한 삶을 가능하게 합니다.</p>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							<div class="col-md-6 col-sm-6">
+								<!-- Showcase section item -->
+								<div class="showcase-item">
+									<!-- Image -->
+									<img class="img-responsive" src='{%static "img/cheff/1.png"%}' alt="" />
+									<!-- Heading -->
+									<h3><a class="btn btn-primary btn-lg" href="{% url "board:food_list" %}">음식보기</a></h3>
+									<p>고단백, 저지방 음식을 소개해주어 운동 후에 섭취하면 더 큰 효과를 볼 수 있도록 합니다.</p>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Showcase End -->
+        </div>
+        <!-- / Wrapper End -->
+		
+		<!-- Scroll to top -->
+		<div style="text-align:right">
+        	<span class="totop"><a class="btn btn-danger" type="button" href="#"><i class="fa fa-angle-up"></i></a></span> 
+        </div>
+		
+		<!-- Javascript files -->
+		<!-- jQuery -->
+		<script src='{%static "js/jquery.js"%}'></script>
+		<!-- Bootstrap JS -->
+		<script src='{%static "js/bootstrap.min.js"%}'></script>
+		<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+		<script type="text/javascript" src='{%static "js/jquery.themepunch.tools.min.js"%}'></script>
+		<script type="text/javascript" src='{%static "js/jquery.themepunch.revolution.min.js"%}'></script>
+		<!-- FLEX SLIDER SCRIPTS  -->
+		<script defer src='{%static "js/jquery.flexslider-min.js"%}'></script>
+		<!-- Pretty Photo JS -->
+		<script src='{%static "js/jquery.prettyPhoto.js"%}'></script>
+		<!-- Respond JS for IE8 -->
+		<script src='{%static "js/respond.min.js"%}'></script>
+		<!-- HTML5 Support for IE -->
+		<script src='{%static "js/html5shiv.js"%}'></script>
+		<!-- Custom JS -->
+		<script src='{%static "js/custom.js"%}'></script>
+		<!-- JS code for this page -->
+		<script>
+		/* ******************************************** */
+		/*  JS for SLIDER REVOLUTION  */
+		/* ******************************************** */
+				jQuery(document).ready(function() {
+					   jQuery('.tp-banner').revolution(
+						{
+							delay:9000,
+							startheight:500,
+							
+							hideThumbs:10,
+							
+							navigationType:"bullet",	
+														
+							hideArrowsOnMobile:"on",
+							
+							touchenabled:"on",
+							onHoverStop:"on",
+							
+							navOffsetHorizontal:0,
+							navOffsetVertical:20,
+							
+							stopAtSlide:-1,
+							stopAfterLoops:-1,
+
+							shadow:0,
+							
+							fullWidth:"on",
+							fullScreen:"off"
+						});
+				});
+		/* ******************************************** */
+		/*  JS for FlexSlider  */
+		/* ******************************************** */
+		
+			$(window).load(function(){
+				$('.flexslider-recent').flexslider({
+					animation:		"fade",
+					animationSpeed:	1000,
+					controlNav:		true,
+					directionNav:	false
+				});
+				$('.flexslider-testimonial').flexslider({
+					animation: 		"fade",
+					slideshowSpeed:	5000,
+					animationSpeed:	1000,
+					controlNav:		true,
+					directionNav:	false
+				});
+			});
+		
+		/* Gallery */
+
+		jQuery(".gallery-img-link").prettyPhoto({
+		   overlay_gallery: false, social_tools: false
+		});
+		
+		</script>
+	</body>	
+</html>

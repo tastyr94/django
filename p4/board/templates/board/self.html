@@ -1,0 +1,99 @@
+{%extends "accounts/layout.html"%}
+{% load staticfiles %}
+{%block content%}
+
+<!-- Inner Content -->
+			<div class="inner-page padd">
+                
+				<!-- Error Start -->
+				
+				<div class="error">
+					<div class="container">
+                        <!-- Booking Start -->
+                        <div class="booking">
+                            <div class="container">
+                                <div class="row">
+                                    
+                                    <div class="col-md-8">
+                                        <!-- Booking form area -->
+                                        <div class="booking-form">
+                                            <!-- Heading -->
+                                            <center><h3>운동 순서</h3></center>
+                                            <!-- Paragraph -->
+                                            <span class="label label-primary">첫번째</span><span class="label label-yellow">60초</span>
+                                            <div class="row">
+                                                <div class="col-xs-8 col-sm-6">
+                                                    <img class="img-responsive" src='{%static "img/exercise/00.png" %}' alt="" />
+                                                    의자를 놓고 손은 앞으로 향하게 한 후, 앉았다 일어났다를 반복한다. 이때 엉덩이가 의자에 닫지 않도록 노력한다.
+                                                </div>
+                                                <div class="col-xs-4 col-sm-6">
+                                                    <onload="show();">
+                                                    <h2><div>Time: <span id="time"></span></div></h2>
+                                                    <input type="button" value="start" onclick="start();" class="btn btn-info">
+                                                    <input type="button" value="stop" onclick="stop();" class="btn btn-danger">
+                                                    <input type="button" value="reset" onclick="reset()" class="btn btn-success">
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <span class="label label-primary">두번째</span><span class="label label-yellow">60초</span>
+                                            <div class="row">
+                                                <div class="col-xs-8 col-sm-6">
+                                                    <img class="img-responsive" src='{%static "img/exercise/03.png" %}' alt="" />
+                                                    벽 같이 고정되있는 것을 마주본 상태에서 잡은 뒤에 다리를 뒤로 들어올린다. 이때 잡고있는 것을 놓치지 않도록 주의한다.
+                                                </div>
+                                                <div class="col-xs-4 col-sm-6">
+                                                    <h2><div>Time: <span id="timer"></span></div></h2>
+                                                    <input type="button" value="start" onclick="start();" class="btn btn-info">
+                                                    <input type="button" value="stop" onclick="stop();" class="btn btn-danger">
+                                                    <input type="button" value="reset" onclick="reset()" class="btn btn-success">
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <span class="label label-primary">세번쨰</span><span class="label label-yellow">60초</span>
+                                            <div class="row">
+                                                <div class="col-xs-8 col-sm-6">
+                                                    <img class="img-responsive" src='{%static "img/exercise/01.png" %}' alt="" />
+                                                    벽을 마주본 상태에서 벽을 손으로 짚고 벽을 밀었다가 되돌아오기를 반복한다. 이때 발이 벽에서 너무 가까지도 멀지도 않도록 노력한다. 
+                                                </div>
+                                                <div class="col-xs-4 col-sm-6">
+                                                    <h2><div>Time: <span id="timer"></span></div></h2>
+                                                    <input type="button" value="start" onclick="start();" class="btn btn-info">
+                                                    <input type="button" value="stop" onclick="stop();" class="btn btn-danger">
+                                                    <input type="button" value="reset" onclick="reset()" class="btn btn-success">
+                                                </div>
+                                            </div>
+                                            <hr>   
+                                            <span class="label label-primary">네번쨰</span><span class="label label-yellow">60초</span>
+                                            <div class="row">
+                                                <div class="col-xs-8 col-sm-6">
+                                                    <img class="img-responsive" src='{%static "img/exercise/02.png" %}' alt="" />
+                                                    누워서 다리를 접은 후에 양손을 교차해서 가슴에 올린 후 상체를 들어올렸다가 되돌아오기를 반복한다. 이때 내려올때는 천천히 내려온다.
+                                                </div>
+                                                <div class="col-xs-4 col-sm-6">
+                                                    <h2><div>Time: <span id="timer"></span></div></h2>
+                                                    <input type="button" value="start" onclick="start();" class="btn btn-info">
+                                                    <input type="button" value="stop" onclick="stop();" class="btn btn-danger">
+                                                    <input type="button" value="reset" onclick="reset()" class="btn btn-success">
+                                                </div>  
+                                            </div>
+                                            <hr>                                                                                 
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <!-- Booking form area -->
+                                        <div class="booking-form">
+                                            <!-- Heading -->
+                                            <center><h3>그래프</h3></center>
+                                            <!-- Paragraph -->
+                                            <img class="img-responsive" src='{%static "img/graph.png" %}' alt="" />                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- Booking End -->
+					</div>
+				</div><!-- Error End -->
+			</div><!-- / Inner Page Content End -->
+
+
+{% endblock %}
